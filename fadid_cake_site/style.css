@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: purple;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    background: url('images/cake1.jpg') center/cover no-repeat;
+    height: 60vh;
+    color: white;
+    text-align: center;
+    padding-top: 150px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.cake {
+    text-align: center;
+}
+
+.cake img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.cake img:hover {
+    transform: scale(1.05);
+}
+
+.cake p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: purple;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: purple;
+    color: white;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 50%;
+}
+/* NAV */
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* SLIDESHOW */
+.slideshow {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.slideshow img {
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('images/cake1.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 0, 128, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+/* PREVIEW */
+.preview-images {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.preview-images img {
+    width: 30%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+.btn {
+    background: purple;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.slideshow img {
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BUTTONS */
+.prev, .next {
+    font-size: 30px;
+    background: purple;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+/* SLIDESHOW */
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* IMAGE CONTAINER */
+.slide-container {
+    position: relative;
+    width: 60%;
+}
+
+/* IMAGE */
+.slide-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* INFO OVERLAY */
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(128, 0, 128, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* BUTTONS */
+.prev, .next {
+    font-size: 30px;
+    background: purple;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* ORDER BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 5px;
+    background: white;
+    color: purple;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.pay-btn {
+    background: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 5px;
+}
+/* CONTACT CENTERED */
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* OWNER SECTION */
+.owner-gallery {
+    text-align: center;
+    padding: 20px;
+}
+
+/* SLIDESHOW IMAGE */
+.owner-slideshow img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.owner-name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+}
