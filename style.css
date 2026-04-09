@@ -1,50 +1,260 @@
-/* style.css */
 body {
-  font-family: Arial, sans-serif;
-  background: url('images/wedding cakes.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: Arial, sans-serif; background:#fff; color:#333; }
 
 /* HEADER */
-header { background:#6a0dad; color:#fff; text-align:center; padding:20px; }
+header {
+    background: purple;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
 
-/* NAVIGATION */
-nav { background:#8e44ad; display:flex; justify-content:center; padding:10px; }
-nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; position:relative; transition:color 0.3s; }
-nav a::after { content:''; position:absolute; width:0; height:2px; background:white; left:0; bottom:-5px; transition:width 0.3s; }
-nav a:hover { color:#ffccff; }
-nav a:hover::after { width:100%; }
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
 
 /* HERO */
-.hero { background:url('../images/wedding.jpg') center/cover no-repeat; height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; }
-.hero h2 { font-size:2.5rem; background: rgba(106,13,173,0.6); padding:20px; border-radius:10px; animation: fadeInUp 1.5s ease forwards; opacity:0; }
-@keyframes fadeInUp { 0% { transform: translateY(20px); opacity:0; } 100% { transform: translateY(0); opacity:1; } }
-
-/* SECTIONS */
-section { padding:40px 20px; text-align:center; opacity:0; transform:translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+.hero {
+    background: url('images/cake1.jpg') center/cover no-repeat;
+    height: 60vh;
+    color: white;
+    text-align: center;
+    padding-top: 150px;
+}
 
 /* GALLERY */
-.cake-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:20px; }
-.cake-card { border:1px solid #ddd; border-radius:10px; overflow:hidden; transition: transform 0.4s, box-shadow 0.4s, filter 0.4s; cursor:pointer; }
-.cake-card img { width:100%; display:block; }
-.cake-card p { padding:10px; font-weight:bold; }
-.cake-card:hover { transform: translateY(-15px) scale(1.05); box-shadow:0 15px 25px rgba(0,0,0,0.3); filter:brightness(1.1); }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
 
-/* ABOUT IMAGE */
-.about-section img { max-width:600px; width:100%; border-radius:10px; margin-bottom:20px; }
+.cake {
+    text-align: center;
+}
 
-/* CONTACT FORM */
-.contact-form { background:#f9f9f9; padding:40px 20px; border-radius:10px; max-width:600px; margin:0 auto 40px auto; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-.contact-form form { display:flex; flex-direction:column; }
-.contact-form input, .contact-form textarea { margin-bottom:15px; padding:10px; border-radius:5px; border:1px solid #ccc; }
-.contact-form button { background:#6a0dad; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; transition: all 0.3s ease; }
-.contact-form button:hover { background:#8e44ad; box-shadow:0 0 10px #8e44ad,0 0 20px #6a0dad; transform:scale(1.05); }
+.cake img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
-/* FOOTER */
-footer { background:#6a0dad; color:white; text-align:center; padding:15px; margin-top:40px; }
+.cake img:hover {
+    transform: scale(1.05);
+}
 
-/* SCROLL FADE-IN */
-section.visible { opacity:1; transform:translateY(0); }
+.cake p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: purple;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: purple;
+    color: white;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 50%;
+}
+/* NAV */
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* SLIDESHOW */
+.slideshow {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.slideshow img {
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('images/cake1.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 0, 128, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+/* PREVIEW */
+.preview-images {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.preview-images img {
+    width: 30%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+.btn {
+    background: purple;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.slideshow img {
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BUTTONS */
+.prev, .next {
+    font-size: 30px;
+    background: purple;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+/* SLIDESHOW */
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* IMAGE CONTAINER */
+.slide-container {
+    position: relative;
+    width: 60%;
+}
+
+/* IMAGE */
+.slide-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* INFO OVERLAY */
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(128, 0, 128, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* BUTTONS */
+.prev, .next {
+    font-size: 30px;
+    background: purple;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* ORDER BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 5px;
+    background: white;
+    color: purple;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.pay-btn {
+    background: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 5px;
+}
+/* CONTACT CENTERED */
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* OWNER SECTION */
+.owner-gallery {
+    text-align: center;
+    padding: 20px;
+}
+
+/* SLIDESHOW IMAGE */
+.owner-slideshow img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.owner-name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+}

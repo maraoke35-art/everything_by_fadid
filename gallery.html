@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<title>Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>everything_by_fadid</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<h2 style="text-align:center;">Cake Slideshow 🎂</h2>
+
+<div class="slideshow">
+
+    <button class="prev" onclick="prevSlide()">❮</button>
+
+    <div class="slide-container">
+        <img id="slide" src="images/cake1.jpg">
+
+        <div class="info">
+    <h3 id="cakeName">Chocolate Cake</h3>
+    <p id="cakePrice">₦10,000</p>
+
+    <a id="orderBtn" href="#" class="btn">Order on WhatsApp</a>
+
+    <button id="payBtn" onclick="payNow()" class="pay-btn">
+        Pay Now
+    </button>
+</div>
+
+    <button class="next" onclick="nextSlide()">❯</button>
+
+</div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<script>
+let cakes = [
+    {img:"images/cake1.jpg", name:"Chocolate Cake", price:"₦10,000"},
+    {img:"images/cake2.jpg", name:"Vanilla Cake", price:"₦8,000"},
+    {img:"images/cake3.jpg", name:"Red Velvet Cake", price:"₦12,000"},
+    {img:"images/cake4.jpg", name:"Birthday Cake", price:"₦15,000"},
+    {img:"images/cake5.jpg", name:"Fruit Cake", price:"₦9,000"},
+    {img:"images/cake6.jpg", name:"Wedding Cake", price:"₦20,000"},
+    {img:"images/cake7.jpg", name:"Buttercream Cake", price:"₦11,000"},
+    {img:"images/cake8.jpg", name:"Fondant Cake", price:"₦14,000"},
+    {img:"images/cake9.jpg", name:"Anniversary Cake", price:"₦16,000"},
+    {img:"images/cake10.jpg", name:"Luxury Cake", price:"₦25,000"}
+];
+
+let index = 0;
+
+function showSlide() {
+    document.getElementById("slide").src = cakes[index].img;
+    document.getElementById("cakeName").innerText = cakes[index].name;
+    document.getElementById("cakePrice").innerText = cakes[index].price;
+
+    document.getElementById("orderBtn").href =
+    "https://wa.me/2348123456789?text=I%20want%20" + cakes[index].name;
+}
+
+function nextSlide() {
+    index++;
+    if(index >= cakes.length) index = 0;
+    showSlide();
+}
+
+function prevSlide() {
+    index--;
+    if(index < 0) index = cakes.length - 1;
+    showSlide();
+}
+
+/* AUTO SLIDE */
+setInterval(nextSlide, 3000);
+
+/* SWIPE SUPPORT */
+let startX = 0;
+
+document.getElementById("slide").addEventListener("touchstart", function(e){
+    startX = e.touches[0].clientX;
+});
+
+document.getElementById("slide").addEventListener("touchend", function(e){
+    let endX = e.changedTouches[0].clientX;
+
+    if(startX > endX + 50){
+        nextSlide(); // swipe left
+    } else if(startX < endX - 50){
+        prevSlide(); // swipe right
+    }
+});
+function payNow(price){
+    let handler = PaystackPop.setup({
+        key: "YOUR_PUBLIC_KEY_HERE",
+        email: "customer@email.com",
+        amount: price * 100,
+        currency: "NGN",
+        callback: function(response){
+            alert("Payment successful!");
+        },
+        onClose: function(){
+            alert("Payment cancelled");
+        }
+    });
+    handler.openIframe();
+}
+</script>
+
+</body>
+</html>

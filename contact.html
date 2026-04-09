@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<title>Contact</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>everything_by_fadid</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- CONTACT DETAILS -->
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Phone: +2347041242383</p>
+    <p>Email: fadidcakes@gmail.com</p>
+    <p>Location: owerri, Nigeria</p>
+</section>
+
+<!-- OWNER SLIDESHOW -->
+<section class="owner-gallery">
+
+    <h3>Meet the Baker 👩‍🍳</h3>
+
+    <div class="owner-slideshow">
+    <img id="ownerSlide" src="images/owner1.jpg">
+    <p class="owner-name">Kingsley Favour Chidimma</p>
+</div>
+</section>
+
+<script>
+let ownerImages = [
+    "images/owner1.jpg",
+    "images/owner2.jpg",
+    "images/owner3.jpg"
+];
+
+let ownerIndex = 0;
+
+setInterval(() => {
+    ownerIndex++;
+    if(ownerIndex >= ownerImages.length) ownerIndex = 0;
+    document.getElementById("ownerSlide").src = ownerImages[ownerIndex];
+}, 3000);
+</script>
+
+</body>
+</html>
